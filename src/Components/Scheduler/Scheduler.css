@@ -1,0 +1,58 @@
+.cockpit {
+    position: absolute;
+    border: 2px solid greenyellow;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+}
+
+.side-panel {
+    position: absolute;
+    border: 2px solid darkviolet;
+    right: 0;
+    top: 0;
+    width: 30%;
+    height: 100%;
+}
+
+.side-panel-title {
+    text-align: center;
+    padding-top: 10%;
+}
+
+.calendar-outer {
+    position: absolute;
+    border: 2px solid crimson;
+    top: 0;
+    left: 0;
+    width: 70%;
+    height: 100%;
+}
+
+.calendar-inner {
+    position: absolute;
+    border: 2px dotted black;
+    bottom: 5%;
+    right: 3%;
+    height: 80%;
+    width: 80%;
+}
+
+ul {
+    list-style: none;
+}
+
+.times {
+    position: absolute;
+    top: 12%;
+    left: 3%;
+}
+
+.time {
+    text-align: right;
+    padding-top: 34px;
+}
+
+
+

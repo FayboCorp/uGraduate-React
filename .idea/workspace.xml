@@ -1,9 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2ccac818-65a7-47ee-976d-61517f101e94" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1cutMlt0E0xDXQnwAe4tepche0z" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -28,5 +46,40 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2ccac818-65a7-47ee-976d-61517f101e94" name="Default Changelist" comment="" />
+      <created>1591390260770</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1591390260770</updated>
+      <workItem from="1591390261939" duration="1022000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1268" height="209" key="GridCell.Tab.0.bottom" timestamp="1591390683391">
+      <screen x="0" y="0" width="1289" height="819" />
+    </state>
+    <state width="1268" height="209" key="GridCell.Tab.0.bottom/0.0.1289.819@0.0.1289.819" timestamp="1591390683391" />
+    <state width="1268" height="209" key="GridCell.Tab.0.center" timestamp="1591390683391">
+      <screen x="0" y="0" width="1289" height="819" />
+    </state>
+    <state width="1268" height="209" key="GridCell.Tab.0.center/0.0.1289.819@0.0.1289.819" timestamp="1591390683391" />
+    <state width="1268" height="209" key="GridCell.Tab.0.left" timestamp="1591390683390">
+      <screen x="0" y="0" width="1289" height="819" />
+    </state>
+    <state width="1268" height="209" key="GridCell.Tab.0.left/0.0.1289.819@0.0.1289.819" timestamp="1591390683390" />
+    <state width="1268" height="209" key="GridCell.Tab.0.right" timestamp="1591390683391">
+      <screen x="0" y="0" width="1289" height="819" />
+    </state>
+    <state width="1268" height="209" key="GridCell.Tab.0.right/0.0.1289.819@0.0.1289.819" timestamp="1591390683391" />
   </component>
 </project>
