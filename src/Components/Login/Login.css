@@ -1,0 +1,9 @@
+
+.cockpit{
+    position: absolute;
+    border: 2px solid greenyellow;
+    right: 0;
+    width: 80%;
+    height: 100%;
+    overflow: auto;
+}
