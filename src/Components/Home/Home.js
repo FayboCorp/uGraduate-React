@@ -12,8 +12,10 @@ class Home extends Component{
     componentDidMount() {
         axios.get("http://localhost:8080/api/sections")
             .then(response => {
-                this.setState({sections: response.data});
-                console.log(response.data);
+                if(this.state.sections === [] || this.state.sections === response.data) {
+                    this.setState({sections: response.data});
+                }
+
             });
     }
 

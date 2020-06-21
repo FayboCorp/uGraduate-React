@@ -1,5 +1,6 @@
 import React from "react";
 import "./Navbar.css";
+import {Link} from "react-router-dom";
 
 const navbar = (props) => {
 
@@ -9,14 +10,14 @@ const navbar = (props) => {
                 <div className="circle"/>
 
                 <ul className="links">
-                    <li className="link" onClick={() => props.click(1)}>
-                        Home
+                    <li className="link">
+                        <Link to="/Home">Home</Link>
                     </li>
-                    <li className="link" onClick={() => props.click(2)}>
-                        Scheduler
+                    <li className="link">
+                        <Link to="/Scheduler">Scheduler</Link>
                     </li>
-                    <li className="link" onClick={() => props.click(3)}>
-                        Advisor
+                    <li className="link">
+                        <Link to="/Advisor">Advisor Portal</Link>
                     </li>
                 </ul>
                 <div className="logoutT">
