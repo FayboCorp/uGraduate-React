@@ -4,7 +4,7 @@ import {Route} from "react-router-dom";
 import Navbar from './Components/Navbar/Navbar';
 import Home from './Components/Home/Home';
 import Scheduler from './Components/Scheduler/Scheduler';
-import Login from './Components/Login/Login';
+import Login from "./Components/Login/Login";
 import './App.css';
 
 // TODO: Work on getting these REST requests!
@@ -16,8 +16,15 @@ class app extends Component{
         return (
             <BrowserRouter>
                 <div>
-                    <Route path="/" component={Navbar}/>
-                    <Route path="/Home" exact component={Home}/>
+                    <Route path="/" component={Login}/>
+
+                    <Route path="/Home" render={props =>
+                        <div>
+                            <Home/>
+                            <Navbar/>
+                        </div>
+                    }/>
+
                     <Route path="/Scheduler" exact component={Scheduler}/>
                 </div>
             </BrowserRouter>

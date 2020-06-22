@@ -1,9 +1,9 @@
 
 .cockpit{
     position: absolute;
-    border: 2px solid greenyellow;
+    background-color: azure;
     right: 0;
-    width: 80%;
+    width: 100%;
     height: 100%;
     overflow: auto;
 }
