@@ -1,0 +1,17 @@
+.username{
+    position: absolute;
+    top: 30%;
+    left: 40%
+}
+
+.password{
+    position: absolute;
+    top: 35%;
+    left: 40%;
+}
+
+.submitButton{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
