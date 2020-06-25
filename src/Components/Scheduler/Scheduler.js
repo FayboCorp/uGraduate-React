@@ -1,9 +1,12 @@
 import React from "react";
+import Navbar from './../Navbar/Navbar';
 import './Scheduler.css';
 
 const scheduler = () => {
     return (
-        <div className="cockpit">
+        <div>
+            <Navbar/>
+            <div className="cockpit">
             <div className="side-panel">
                 <div className="side-panel-title">Unscheduled Classes</div>
             </div>
@@ -46,6 +49,7 @@ const scheduler = () => {
 
                 </div>
             </div>
+        </div>
         </div>
     );
 };

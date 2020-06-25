@@ -16,16 +16,18 @@ class app extends Component{
         return (
             <BrowserRouter>
                 <div>
-                    <Route path="/" component={Login}/>
+                    {/*<Route path="/" component={Login}/>*/}
 
-                    <Route path="/Home" render={props =>
+                 {/*   <Route path="/" render={props =>
                         <div>
                             <Home/>
                             <Navbar/>
                         </div>
-                    }/>
+                    }/>*/}
+                    <Route path="/home" exact component={Home}/>
+                    {/*<Route path="/" component={Login}/>*/}
+                    <Route path="/scheduler" exact component={Scheduler}/>
 
-                    <Route path="/Scheduler" exact component={Scheduler}/>
                 </div>
             </BrowserRouter>
         );

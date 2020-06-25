@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2ccac818-65a7-47ee-976d-61517f101e94" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/redux-basics.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Home.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Navbar/Navbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Navbar/Navbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Scheduler/Scheduler.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Scheduler/Scheduler.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Scheduler/Scheduler.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Scheduler/Scheduler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -41,6 +53,11 @@
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="settings.typescriptcompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Fabian\Desktop\Repo\ugraduate-react" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -89,21 +106,21 @@
       <screen x="0" y="0" width="1289" height="819" />
     </state>
     <state x="425" y="169" key="FileChooserDialogImpl/0.0.1289.819@0.0.1289.819" timestamp="1592828382336" />
-    <state width="1268" height="209" key="GridCell.Tab.0.bottom" timestamp="1592918262042">
+    <state width="1268" height="209" key="GridCell.Tab.0.bottom" timestamp="1593047203439">
       <screen x="0" y="0" width="1289" height="819" />
     </state>
-    <state width="1268" height="209" key="GridCell.Tab.0.bottom/0.0.1289.819@0.0.1289.819" timestamp="1592918262042" />
-    <state width="1268" height="209" key="GridCell.Tab.0.center" timestamp="1592918262041">
+    <state width="1268" height="209" key="GridCell.Tab.0.bottom/0.0.1289.819@0.0.1289.819" timestamp="1593047203439" />
+    <state width="1268" height="209" key="GridCell.Tab.0.center" timestamp="1593047203438">
       <screen x="0" y="0" width="1289" height="819" />
     </state>
-    <state width="1268" height="209" key="GridCell.Tab.0.center/0.0.1289.819@0.0.1289.819" timestamp="1592918262041" />
-    <state width="1268" height="209" key="GridCell.Tab.0.left" timestamp="1592918262041">
+    <state width="1268" height="209" key="GridCell.Tab.0.center/0.0.1289.819@0.0.1289.819" timestamp="1593047203438" />
+    <state width="1268" height="209" key="GridCell.Tab.0.left" timestamp="1593047203438">
       <screen x="0" y="0" width="1289" height="819" />
     </state>
-    <state width="1268" height="209" key="GridCell.Tab.0.left/0.0.1289.819@0.0.1289.819" timestamp="1592918262041" />
-    <state width="1268" height="209" key="GridCell.Tab.0.right" timestamp="1592918262041">
+    <state width="1268" height="209" key="GridCell.Tab.0.left/0.0.1289.819@0.0.1289.819" timestamp="1593047203438" />
+    <state width="1268" height="209" key="GridCell.Tab.0.right" timestamp="1593047203439">
       <screen x="0" y="0" width="1289" height="819" />
     </state>
-    <state width="1268" height="209" key="GridCell.Tab.0.right/0.0.1289.819@0.0.1289.819" timestamp="1592918262041" />
+    <state width="1268" height="209" key="GridCell.Tab.0.right/0.0.1289.819@0.0.1289.819" timestamp="1593047203439" />
   </component>
 </project>

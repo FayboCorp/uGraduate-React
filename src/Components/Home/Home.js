@@ -2,11 +2,15 @@ import React, {Component} from "react";
 import Classbox from "../Home/Classbox/Classbox"
 import './Home.css';
 import axios from "axios";
+import Navbar from "../Navbar/Navbar";
+import {connect} from 'react-redux';
 
 class Home extends Component{
 
     state = {
         sections: [],
+        gpa: 5
+
     };
 
     componentDidMount() {
@@ -28,16 +32,21 @@ class Home extends Component{
             return (<Classbox className={sections.className}/>)
         });
         return(
+            <div>
+            <Navbar/>
 
             <div className="cockpit">
                 <div className="progress-bar">
-                    <div>Cumulative GPA: </div>
+                    <div>Cumulative GPA: {this.props.gpa}</div>
                     <div>Major GPA: </div>
                     <div>Classes Remaining: </div>
                 </div>
                 <div className="classDisplay">
+                    <button onClick={this.props.IncrementCounter}>Inc</button>
                     {sections}
                 </div>
+            </div>
+
             </div>
 
         );
@@ -45,4 +54,17 @@ class Home extends Component{
 
 }
 
-export default Home;
+const mapStateToProps = state => {
+    return{
+        gpa: state.gpa
+    }
+};
+
+const mapDispatchToProps = dispatch => {
+
+    return {
+        IncrementCounter: () => dispatch({type: 'INCREMENT'})
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
