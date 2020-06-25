@@ -1,13 +1,14 @@
 import React, {Component} from "react";
 import './field.css';
 import axios from 'axios';
-import Cookies from 'js-cookie';
+import {connect} from 'react-redux'
 
 class field extends Component{
 
     state = {
         username: "",
-        password: ""
+        password: "",
+        jwt: null
     };
 
     submitCredentials = (props) => {
@@ -17,8 +18,20 @@ class field extends Component{
         };
         axios.post("//localhost:8080/login", payload)
             .then(response => {
-                console.log(response);
+                if(response.status.toString() === '200'){
+                    this.props.LoadBearer(response.headers.authorization);
+
+                }
+            })
+            .catch(error => {
+                console.log(error);
             });
+
+    };
+
+    showSections = () => {
+
+
     };
 
     render() {
@@ -39,14 +52,22 @@ class field extends Component{
 
                 <button className="submitButton" onClick={this.submitCredentials}>Submit</button>
 
-                <br/>
-                Only showing this to see change of state
-                <br/>
-                Current Entered Username: {this.state.username} <br/>
-                Current Entered Password: {this.state.password}
             </div>
         );
     }
 }
 
-export default field;
+const MapStateToProps = state => {
+    return {
+        isAuthenticated: state.isAuthenticated,
+        jwt: state.jwt
+    }
+};
+
+const MapDispatchToProps = (dispatch) => {
+    return {
+        LoadBearer: (token) => dispatch({type: 'LOAD_BEARER', bearer: token})
+    };
+};
+
+export default connect(MapStateToProps, MapDispatchToProps)(field);

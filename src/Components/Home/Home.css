@@ -35,3 +35,13 @@
     width: 50%;
     height: 100%;
 }
+
+.course-title{
+    text-align: center;
+}
+
+.register{
+    display: inline;
+    color: deepskyblue;
+    cursor: pointer;
+}

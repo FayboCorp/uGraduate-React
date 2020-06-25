@@ -9,16 +9,23 @@ class Home extends Component{
 
     state = {
         sections: [],
-        gpa: 5
-
+        gpa: 5,
+        clickedInfo: false,
+        sectionInfo: ''
     };
 
     componentDidMount() {
-        console.log(this.props);
-        axios.get("http://localhost:8080/api/sections")
+        let config = {
+            headers: {
+                "Authorization": this.props.jwt
+            }
+        };
+
+        axios.get("http://localhost:8080/api/sections", config)
             .then(response => {
-                if(this.state.sections === [] || this.state.sections === response.data) {
+                if(this.state.sections === [] || this.state.sections !== response.data) {
                     this.setState({sections: response.data});
+                    console.log(response.data);
                 }
 
             })
@@ -27,25 +34,66 @@ class Home extends Component{
             });
     }
 
+    classInfoHandler = (props) => {
+        this.setState({clickedInfo: true});
+        this.setState({sectionInfo: props});
+    };
+
+    addClassHandler = (props) =>{
+        this.props.PushClass(props);
+    };
+
     render(){
+
         const sections = this.state.sections.map(sections => {
-            return (<Classbox className={sections.className}/>)
+            return (<Classbox className={sections.className} classInfo={sections} clicked={this.classInfoHandler}/>)
         });
+        let information = (
+            <div>
+                Click on a class to see information and/or start Registration
+            </div>
+        );
+        if(this.state.clickedInfo){
+            information = (
+                <div style={{fontSize: '14px'}}>
+
+                    <div style={{fontWeight: "bold"}}>{this.state.sectionInfo.className}: </div>
+                    {this.state.sectionInfo.sectionDescription}
+                    <br/>
+                    <div style={{fontWeight: "bold"}}>Professor:</div>
+                    {(this.state.sectionInfo.professor)}
+                    <br/>
+
+                    <div className="register" onClick={() =>
+                        this.addClassHandler(this.state.sectionInfo.className + ", ")}>
+                        Register
+                    </div> <br/><br/>
+                    pre registered classes: {this.props.preRegistered}
+
+                </div>
+            );
+        }
         return(
             <div>
-            <Navbar/>
+                <Navbar/>
 
-            <div className="cockpit">
-                <div className="progress-bar">
-                    <div>Cumulative GPA: {this.props.gpa}</div>
-                    <div>Major GPA: </div>
-                    <div>Classes Remaining: </div>
+                <div className="cockpit">
+                    <div className="progress-bar">
+                        {/* Create a info page using redux */}
+                        {information}
+                    </div>
+
+                    <div className="classDisplay">
+                        <div>Cumulative GPA: {this.props.gpa}</div>
+                        <div>Major GPA: </div>
+                        <div>Classes Remaining: </div>
+                        <h2 className="course-title">
+                            Your Entire Course List
+                        </h2>
+                        {sections}
+                    </div>
+
                 </div>
-                <div className="classDisplay">
-                    <button onClick={this.props.IncrementCounter}>Inc</button>
-                    {sections}
-                </div>
-            </div>
 
             </div>
 
@@ -55,16 +103,17 @@ class Home extends Component{
 }
 
 const mapStateToProps = state => {
-    return{
+    return {
+        jwt: state.jwt,
+        preRegistered: state.preRegistered,
         gpa: state.gpa
     }
 };
 
-const mapDispatchToProps = dispatch => {
-
-    return {
-        IncrementCounter: () => dispatch({type: 'INCREMENT'})
-    };
+const mapDispatchToProps = dispatch =>{
+    return{
+        PushClass: (className) => dispatch({type: 'LOAD_CLASS', class: className})
+    }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
