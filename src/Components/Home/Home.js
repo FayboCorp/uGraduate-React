@@ -45,6 +45,10 @@ class Home extends Component{
 
     render(){
 
+        const preReg = this.props.preRegistered.map(sections => {
+            return (<div className="preReg"> {sections} </div>)
+        });
+
         const sections = this.state.sections.map(sections => {
             return (<Classbox className={sections.className} classInfo={sections} clicked={this.classInfoHandler}/>)
         });
@@ -65,10 +69,10 @@ class Home extends Component{
                     <br/>
 
                     <div className="register" onClick={() =>
-                        this.addClassHandler(this.state.sectionInfo.className + ", ")}>
+                        this.addClassHandler(this.state.sectionInfo.className)}>
                         Register
                     </div> <br/><br/>
-                    pre registered classes: {this.props.preRegistered}
+                    pre registered classes: {preReg}
 
                 </div>
             );

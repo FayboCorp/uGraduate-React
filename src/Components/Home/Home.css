@@ -45,3 +45,9 @@
     color: deepskyblue;
     cursor: pointer;
 }
+
+.preReg{
+    display: inline-block;
+    margin-left: 5px;
+    border: .5px solid darkslategrey;
+}

@@ -1,0 +1,23 @@
+.outerBox{
+    margin-bottom: 20px;
+    border: 1px solid lightblue;
+    position: relative;
+    display: inline-block;
+    height: 40px;
+    width: 250px;
+    left: 8%;
+}
+
+.text{
+    position: absolute;
+    top: 19%;
+    left: 8%;
+
+}
+
+.scheduleButton{
+    position: absolute;
+    right: .5%;
+    top: 3%;
+    height: 35px;
+}

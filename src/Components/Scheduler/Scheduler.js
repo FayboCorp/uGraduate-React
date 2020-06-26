@@ -1,57 +1,52 @@
-import React from "react";
+import React, {Component} from "react";
 import Navbar from './../Navbar/Navbar';
 import './Scheduler.css';
+import RegisterPanel from "./RegisterPanel/RegisterPanel";
+import {connect} from 'react-redux';
 
-const scheduler = () => {
-    return (
-        <div>
-            <Navbar/>
-            <div className="cockpit">
-            <div className="side-panel">
-                <div className="side-panel-title">Unscheduled Classes</div>
-            </div>
+class scheduler extends Component {
 
-            <div className="calendar-outer">
-                <ul className="times">
-                    <li className="time">
-                        800
-                    </li>
-                    <li className="time">
-                        900
-                    </li>
-                    <li className="time">
-                        1000
-                    </li>
-                    <li className="time">
-                        1100
-                    </li>
-                    <li className="time">
-                        1200
-                    </li>
-                    <li className="time">
-                        1300
-                    </li>
-                    <li className="time">
-                        1400
-                    </li>
-                    <li className="time">
-                        1500
-                    </li>
-                    <li className="time">
-                        1600
-                    </li>
-                    <li className="time">
-                        1700
-                    </li>
+    // add redux state to map multiple register panels
+    render() {
 
-                </ul>
-                <div className="calendar-inner">
+        const preReg = this.props.preRegistered.map(sections=>{
+            return(
+                <RegisterPanel className={sections}/>
+            )
+        });
 
+        return (
+            <div>
+
+                <div>
+                    <Navbar/>
+                    <div className="cockpit">
+                        <div className="side-panel">
+                            <div className="side-panel-title">Unscheduled Classes</div>
+                            <br/>
+                            <div>
+                                {preReg}
+                            </div>
+                        </div>
+
+                        <div className="calendar-outer">
+                            <div className="calendar-inner">
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        </div>
-    );
+        );
+    }
+}
+
+const mapStateToProps = state => {
+
+    return {
+        preRegistered: state.preRegistered
+    }
+
 };
 
-export default scheduler;
+export default connect(mapStateToProps)(scheduler);
