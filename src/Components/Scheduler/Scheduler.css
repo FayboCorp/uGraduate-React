@@ -62,5 +62,26 @@ ul {
     padding-top: 34px;
 }
 
+.days {
 
+    position: absolute;
+    display: block;
+    top: 7%;
+    left: 18%;
+
+}
+
+.day{
+    display: inline-block;
+    padding-right: 98px;
+}
+
+.blocks{
+    position: absolute;
+    display: block;
+    top: 7%;
+    left: 1.5%;
+    margin-top: 0;
+    padding-top: 0;
+}
 

@@ -1,4 +1,5 @@
 const initialState = {
+    username: '',
     gpa: 0,
     isAuthenticated: false,
     jwt: null,
@@ -24,7 +25,7 @@ const reducer = (state = initialState, action) => {
         }
         return {
             ...state,
-            preRegistered: [...state.preRegistered, action.class]
+            preRegistered: [...state.preRegistered, action.class + " at " + action.time + " on " + action.day]
         }
     }
 

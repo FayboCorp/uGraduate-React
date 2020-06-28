@@ -39,8 +39,8 @@ class Home extends Component{
         this.setState({sectionInfo: props});
     };
 
-    addClassHandler = (props) =>{
-        this.props.PushClass(props);
+    addClassHandler = (name, time, day) =>{
+        this.props.PushClass(name, time, day);
     };
 
     render(){
@@ -69,7 +69,9 @@ class Home extends Component{
                     <br/>
 
                     <div className="register" onClick={() =>
-                        this.addClassHandler(this.state.sectionInfo.className)}>
+                        this.addClassHandler(this.state.sectionInfo.className,
+                            this.state.sectionInfo.meetTimes,
+                            this.state.sectionInfo.meetDays)}>
                         Register
                     </div> <br/><br/>
                     pre registered classes: {preReg}
@@ -116,7 +118,10 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>{
     return{
-        PushClass: (className) => dispatch({type: 'LOAD_CLASS', class: className})
+        PushClass: (className, classTime, classDay) => dispatch({type: 'LOAD_CLASS',
+            class: className,
+            time: classTime,
+            day: classDay})
     }
 };
 
