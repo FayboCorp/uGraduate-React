@@ -11,27 +11,34 @@ class Home extends Component{
         sections: [],
         gpa: 5,
         clickedInfo: false,
-        sectionInfo: ''
+        sectionInfo: '',
+        registeredSections: []
     };
 
     componentDidMount() {
+        console.log(this.props.jwt);
         let config = {
             headers: {
                 "Authorization": this.props.jwt
             }
         };
 
-        axios.get("http://localhost:8080/api/sections", config)
+        axios.get("http://localhost:8080/student/api/available-sections", config)
             .then(response => {
                 if(this.state.sections === [] || this.state.sections !== response.data) {
                     this.setState({sections: response.data});
                     console.log(response.data);
                 }
-
             })
             .catch(error => {
                 console.log(error);
             });
+        axios.get("http://localhost:8080/student/api/register", config)
+            .then(response => {
+                if(this.state.registeredSections === [] || this.state.registeredSections !== response.data){
+                    this.setState({registeredSections: response.data});
+                }
+            })
     }
 
     classInfoHandler = (props) => {
@@ -39,11 +46,12 @@ class Home extends Component{
         this.setState({sectionInfo: props});
     };
 
-    addClassHandler = (name, time, day) =>{
-        this.props.PushClass(name, time, day);
+    addClassHandler = (name, time, day, crn) =>{
+        this.props.PushClass(name, time, day, crn);
     };
 
     render(){
+
 
         const preReg = this.props.preRegistered.map(sections => {
             return (<div className="preReg"> {sections} </div>)
@@ -58,6 +66,26 @@ class Home extends Component{
             </div>
         );
         if(this.state.clickedInfo){
+
+            let registerButton = (
+
+                <div className="register" onClick={() =>
+                    this.addClassHandler(this.state.sectionInfo.className,
+                        this.state.sectionInfo.meetTimes,
+                        this.state.sectionInfo.meetDays,
+                        this.state.sectionInfo.crn)}>
+                    Register
+                </div>
+
+            );
+            for(let i = 0; i<this.state.registeredSections.length; i++ ){
+                if(this.state.registeredSections[i].className === this.state.sectionInfo.className){
+                    registerButton = (
+                        <div className="register">You cannot register for this class. Please see your advisor</div>
+                    )
+                }
+            }
+
             information = (
                 <div style={{fontSize: '14px'}}>
 
@@ -68,12 +96,7 @@ class Home extends Component{
                     {(this.state.sectionInfo.professor)}
                     <br/>
 
-                    <div className="register" onClick={() =>
-                        this.addClassHandler(this.state.sectionInfo.className,
-                            this.state.sectionInfo.meetTimes,
-                            this.state.sectionInfo.meetDays)}>
-                        Register
-                    </div> <br/><br/>
+                    {registerButton} <br/><br/>
                     pre registered classes: {preReg}
 
                 </div>
@@ -118,10 +141,11 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch =>{
     return{
-        PushClass: (className, classTime, classDay) => dispatch({type: 'LOAD_CLASS',
+        PushClass: (className, classTime, classDay, crn) => dispatch({type: 'LOAD_CLASS',
             class: className,
             time: classTime,
-            day: classDay})
+            day: classDay,
+            crn: crn})
     }
 };
 

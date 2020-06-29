@@ -18,14 +18,25 @@ const reducer = (state = initialState, action) => {
 
     if(action.type === 'LOAD_CLASS'){
         let list = [...state.preRegistered];
-        if(list.includes(action.class)){
-            return {
-                ...state
+        let pushedClass = [
+            action.class,
+            action.time,
+            action.day,
+            action.crn
+        ];
+
+        for(let i = 0; i<list.length; i++){
+            if(list[i][0] === action.class){
+                return {
+                    ...state
+                }
             }
+
         }
+
         return {
             ...state,
-            preRegistered: [...state.preRegistered, action.class + " at " + action.time + " on " + action.day]
+            preRegistered: [...state.preRegistered, pushedClass]
         }
     }
 

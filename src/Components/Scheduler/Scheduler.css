@@ -40,7 +40,7 @@
 
 .calendar-inner {
     position: absolute;
-    border: 2px dotted black;
+    border: 1px dotted black;
     bottom: 5%;
     right: 3%;
     height: 80%;
