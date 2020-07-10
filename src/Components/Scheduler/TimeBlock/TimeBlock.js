@@ -8,12 +8,12 @@ const timeBlock = (props) => {
         </div>
     );
 
-    if(props.className !== "x"){
+    if(props.theClassName !== "x"){
         if(!isNaN(props.classTime)){
             return(
-                <div className="container">
+                <div className="filledcontainer">
                     <div className="textField">
-                        {props.className} <br/>
+                        {props.theClassName} <br/>
                         {props.classTime}
                     </div>
                 </div>

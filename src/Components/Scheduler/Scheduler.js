@@ -10,8 +10,25 @@ class scheduler extends Component {
 
     // TODO: import redux, add state to this component, add jwt to outgoing request...
     state = {
-        jwt: null
+        jwt: null,
+        registered: []
     };
+
+
+    componentDidMount() {
+        let config = {
+            headers: {
+                "Authorization": this.props.jwt
+            }
+        };
+        axios.get("//localhost:8080/student/api/register", config)
+            .then(response => {
+                if(this.state.registered === response.data || this.state.registered !== []) {
+                    this.setState({registered: response.data});
+                }
+            })
+
+    }
 
     registerClickHandler = (crn) => {
 
@@ -25,17 +42,18 @@ class scheduler extends Component {
             };
         axios.post("//localhost:8080/student/api/register/" + crn, classInfo, config)
             .then(response => {
-
             });
 
     };
 
     // add redux state to map multiple register panels
     render() {
+        console.log("+++++++");
+        console.log(this.state.registered);
 
         const preReg = this.props.preRegistered.map(sections=>{
             return(
-                <RegisterPanel className={sections[0]}
+                <RegisterPanel theClassName={sections[0]}
                                classTime={sections[1]}
                                classDay={sections[2]}
                                crn={sections[3]}
@@ -49,16 +67,16 @@ class scheduler extends Component {
             let time;
             let day;
             let slot;
-            grid[i] = (<TimeBlock className="x"/>);
+            grid[i] = (<TimeBlock theClassName="x"/>);
             for(let j = 0; j<this.props.preRegistered.length; j++){
-
+                // TODO: You have the registered classes in state, now figure out how to add it to scheduler
                 time =  (parseInt(this.props.preRegistered[0][1])/100) - 8;
                 day = parseInt(this.props.preRegistered[0][2]) - 1;
                 slot = (5*time) + day;
-
+                // TODO: Registered classes show up here too!
                 if(slot === i){
                     grid[i] = (<TimeBlock
-                        className={this.props.preRegistered[0][0]}
+                        theClassName={this.props.preRegistered[0][0]}
                         classTime={this.props.preRegistered[0][1]}/>)
                 }
             }
@@ -150,7 +168,7 @@ const mapStateToProps = state => {
 
     return {
         jwt: state.jwt,
-        preRegistered: state.preRegistered
+        preRegistered: state.preRegistered,
     }
 
 };

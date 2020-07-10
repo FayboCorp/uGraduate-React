@@ -20,7 +20,6 @@ class field extends Component{
             .then(response => {
                 if(response.status.toString() === '200'){
                     this.props.LoadBearer(response.headers.authorization);
-
                 }
             })
             .catch(error => {

@@ -3,7 +3,8 @@ const initialState = {
     gpa: 0,
     isAuthenticated: false,
     jwt: null,
-    preRegistered: []
+    preRegistered: [],
+    registered: []
 };
 
 const reducer = (state = initialState, action) => {
@@ -14,6 +15,13 @@ const reducer = (state = initialState, action) => {
             jwt: action.bearer,
             isAuthenticated: true
         }
+    }
+
+    if(action.type === 'LOAD_REG'){
+        return {
+            ...state,
+            registered: action.registered
+    }
     }
 
     if(action.type === 'LOAD_CLASS'){

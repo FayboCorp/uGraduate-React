@@ -27,7 +27,7 @@ class Home extends Component{
             .then(response => {
                 if(this.state.sections === [] || this.state.sections !== response.data) {
                     this.setState({sections: response.data});
-                    console.log(response.data);
+
                 }
             })
             .catch(error => {
@@ -36,6 +36,7 @@ class Home extends Component{
         axios.get("http://localhost:8080/student/api/register", config)
             .then(response => {
                 if(this.state.registeredSections === [] || this.state.registeredSections !== response.data){
+                    console.log(response.data);
                     this.setState({registeredSections: response.data});
                 }
             })
@@ -80,6 +81,7 @@ class Home extends Component{
             );
             for(let i = 0; i<this.state.registeredSections.length; i++ ){
                 if(this.state.registeredSections[i].className === this.state.sectionInfo.className){
+                    console.log(this.state.registeredSections[i].className);
                     registerButton = (
                         <div className="register">You cannot register for this class. Please see your advisor</div>
                     )
@@ -121,9 +123,7 @@ class Home extends Component{
                         </h2>
                         {sections}
                     </div>
-
                 </div>
-
             </div>
 
         );
@@ -135,7 +135,7 @@ const mapStateToProps = state => {
     return {
         jwt: state.jwt,
         preRegistered: state.preRegistered,
-        gpa: state.gpa
+        gpa: state.gpa,
     }
 };
 
